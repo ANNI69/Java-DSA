@@ -1,20 +1,21 @@
+package Patterns;
+
 import java.util.Scanner;
 
-class Generate10{
+class Generate13{
     void Pattern(int n){
-        for(int i=1;i<=2*n-1;i++){
-            int stars = i;
-            if (i > n) stars = 2*n-i;
-            for(int j=1;j<=stars;j++){
-                System.out.print("* ");
+        for (int i = 0; i <= n; i++) {
+            for (char j = 'A'; j <= 'A'+i; j++) {
+                System.out.print(j);
             }
             System.out.println();
         }
     }
 }
-public class Pattern10 {
+//n-i+1
+public class Pattern13 {
     public static void main(String[] args) {
-        Generate10 gen = new Generate10();
+        Generate13 gen = new Generate13();
         Scanner sc = new Scanner(System.in);
         int test = 3;
         int n;

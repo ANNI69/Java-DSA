@@ -1,23 +1,24 @@
+package Patterns;
+
 import java.util.Scanner;
 
-class Generate12{
+class Generate4{
     void Pattern(int n){
-        int num=1;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(num + " AC");
-                num++;
+        for(int i=0;i<n;i++){
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print("* ");
             }
             System.out.println();
         }
     }
 }
-public class Pattern12 {
+public class Pattern4 {
     public static void main(String[] args) {
-        Generate12 gen = new Generate12();
+        Generate4 gen = new Generate4();
         Scanner sc = new Scanner(System.in);
-        int test = 3;
+        int test ;
         int n;
+        test = 3;
         for(int i=0;i<test;i++){
             n = sc.nextInt();
             gen.Pattern(n);

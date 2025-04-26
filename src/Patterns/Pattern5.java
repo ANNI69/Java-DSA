@@ -1,22 +1,24 @@
+package Patterns;
+
 import java.util.Scanner;
 
-class Generate13{
+class Generate5{
     void Pattern(int n){
-        for (int i = 0; i <= n; i++) {
-            for (char j = 'A'; j <= 'A'+i; j++) {
+        for(int i=1;i<n;i++){
+            for(int j=1;j<=n-i+1;j++){
                 System.out.print(j);
             }
             System.out.println();
         }
     }
 }
-//n-i+1
-public class Pattern13 {
+public class Pattern5 {
     public static void main(String[] args) {
-        Generate13 gen = new Generate13();
+        Generate5 gen = new Generate5();
         Scanner sc = new Scanner(System.in);
-        int test = 3;
+        int test ;
         int n;
+        test = 3;
         for(int i=0;i<test;i++){
             n = sc.nextInt();
             gen.Pattern(n);

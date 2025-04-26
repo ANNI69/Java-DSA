@@ -1,3 +1,5 @@
+package Patterns;
+
 class Generate1{
     void Pattern(int n){
         for(int i=0;i<n;i++){
