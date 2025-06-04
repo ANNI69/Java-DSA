@@ -9,3 +9,4 @@ public class FactorialInRecursion {
         System.out.println(f.factorial(5));
     }
 }
+    
