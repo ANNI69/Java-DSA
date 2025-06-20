@@ -1,7 +1,7 @@
 package Sorting;
 
 public class BubbleSorting {
-    static void bubbleSort(int arr[], int n){
+    static void bubbleSort(int[] arr, int n){
         int i, j, temp;
         boolean swapped;
         for (i = 0; i < n - 1; i++) {
@@ -19,7 +19,7 @@ public class BubbleSorting {
         }
     }
 
-    static void printArray(int arr[], int size){
+    static void printArray(int[] arr, int size){
         int i;
         for (i = 0; i < size; i++)
             System.out.print(arr[i] + " ");
