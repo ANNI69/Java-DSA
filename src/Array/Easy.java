@@ -87,6 +87,7 @@ public class Easy {
         }
         return -1;
     }
+
     int findLastOc(int[] nums, int target) {
         for (int i = nums.length - 1; i >= 0; i--) {
             if (nums[i] == target) {
@@ -95,7 +96,8 @@ public class Easy {
         }
         return -1;
     }
-    public int[] searchRange(int[] nums, int target){
+
+    public int[] searchRange(int[] nums, int target) {
         int first = findFirstOc(nums, target);
         int last = findLastOc(nums, target);
         return new int[]{first, last};
@@ -129,9 +131,21 @@ public class Easy {
         return nums;
     }
 
+    public int[] moveZeroes(int[] nums) {
+        for (int i = 0; i < nums.length; i++) { // [0,1,0,3,12]
+            if (nums[i] == 0) {
+                nums[i] = nums[i + 1];
+                if (i + 1 < nums.length) {
+                    nums[i + 1] = 0;
+                }
+            }
+        }
+        return nums;
+    }
+
     public static void main(String[] args) {
         Easy easy = new Easy();
-        int[] arr = {1, 2, 3, 4, 5};
-        System.out.println(Arrays.toString(easy.rotateLeftByOne(arr)));
+        int[] arr = {0, 1, 0, 3, 12};
+        System.out.println(Arrays.toString(easy.moveZeroes(arr)));
     }
 }
