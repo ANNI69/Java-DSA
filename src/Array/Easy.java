@@ -1,6 +1,8 @@
 package Array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class Easy {
     int largestElement(int[] arr) {
@@ -131,21 +133,78 @@ public class Easy {
         return nums;
     }
 
-    public int[] moveZeroes(int[] nums) {
-        for (int i = 0; i < nums.length; i++) { // [0,1,0,3,12]
-            if (nums[i] == 0) {
-                nums[i] = nums[i + 1];
-                if (i + 1 < nums.length) {
-                    nums[i + 1] = 0;
-                }
+    public void moveZeroes(int[] nums) {
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            if (nums[right] != 0) {
+                int temp = nums[right];
+                nums[right] = nums[left];
+                nums[left] = temp;
+                left++;
             }
         }
-        return nums;
+        System.out.println(Arrays.toString(nums));
     }
+
+    static ArrayList<Integer> FindUnion(int arr1[], int arr2[], int n, int m) {
+        HashSet<Integer> s = new HashSet<>();
+        for (int i = 0; i < n; i++)
+            s.add(arr1[i]);
+        for (int i = 0; i < m; i++)
+            s.add(arr2[i]);
+        return new ArrayList<>(s);
+    }
+
+    static ArrayList<Integer> FindIntersect(int arr1[], int arr2[], int n, int m) {
+        HashSet<Integer> s = new HashSet<>();
+        for (int i = 0; i < n; i++)
+            s.add(arr1[i]);
+        for (int i = 0; i < m; i++)
+            s.add(arr2[i]);
+        return new ArrayList<>(s);
+    }
+
+    int findMissing(int[] nums) {//[3,0,1]
+        int n = nums.length;
+        Arrays.sort(nums);
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != i) {
+                return i;
+            }
+        }
+        return n;
+    }
+
+    public int findMaxConsecutiveOnes(int[] nums) { //[1,0,1,1,0,1]
+        int max = Integer.MIN_VALUE;
+        int ctr = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                ctr++;
+            } else {
+                ctr = 0;
+            }
+            if (ctr > max) {
+                max = ctr;
+            }
+        }
+        return max;
+    }
+
+    public int singleNumber(int[] nums) {//[2,2,1]
+        int ctr = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+
+            }
+        }
+        return -1;
+    }
+
 
     public static void main(String[] args) {
         Easy easy = new Easy();
-        int[] arr = {0, 1, 0, 3, 12};
-        System.out.println(Arrays.toString(easy.moveZeroes(arr)));
+        int[] arr1 = {2, 2, 1};
+        System.out.println(easy.singleNumber(arr1));
     }
 }
