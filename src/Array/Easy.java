@@ -191,15 +191,16 @@ public class Easy {
         return max;
     }
 
-    public int singleNumber(int[] nums) {//[2,2,1]
-        int ctr = 0;
+    public int singleNumber(int[] nums) {
+        int index = 0;
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-
-            }
+            index = index ^ nums[i];
         }
-        return -1;
+
+        return index;
     }
+
+    
 
 
     public static void main(String[] args) {
