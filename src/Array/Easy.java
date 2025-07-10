@@ -200,9 +200,6 @@ public class Easy {
         return index;
     }
 
-    
-
-
     public static void main(String[] args) {
         Easy easy = new Easy();
         int[] arr1 = {2, 2, 1};
